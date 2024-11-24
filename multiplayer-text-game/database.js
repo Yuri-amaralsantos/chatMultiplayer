@@ -14,18 +14,24 @@ const createTable = () => {
       console.error('Error creating table:', err);
     }
   });
+  db.run("DELETE FROM messages")
 };
 
 // Function to insert a message into the database
-const insertMessage = (playerId, message, callback) => {
-  db.run('INSERT INTO messages (player_id, message) VALUES (?, ?)', [playerId, message], function (err) {
-    if (err) {
-      console.error('Error inserting message:', err);
-      callback(err);
-    } else {
-      callback(null, this.lastID);
+const insertMessage = (playerRole, message, callback) => {
+  db.run(
+    'INSERT INTO messages (player_id, message) VALUES (?, ?)',
+    [playerRole, message],
+    function (err) {
+      if (err) {
+        console.error('Error inserting message:', err);
+        callback(err);
+      } else {
+        console.log('Message inserted with ID:', this.lastID);
+        callback(null, this.lastID);
+      }
     }
-  });
+  );
 };
 
 // Function to retrieve all messages from the database

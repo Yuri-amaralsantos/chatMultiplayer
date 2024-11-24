@@ -24,6 +24,7 @@ socket.on('allMessages', (messages) => {
     });
 });
 
+
 // Send a message to the server when the button is clicked
 sendButton.addEventListener('click', () => {
     const message = messageInput.value.trim();
@@ -44,3 +45,4 @@ function addMessage(senderRole, text) {
 socket.on('receiveMessage', ({ senderRole, message }) => {
     addMessage(senderRole, message);
 });
+
