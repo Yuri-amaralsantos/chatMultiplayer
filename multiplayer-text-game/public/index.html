@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiplayer Messaging Game</title>
-</head>
-<body>
-    <div id="roleBox">Waiting for player...</div>
-    <div>
-        <input id="messageInput" type="text" placeholder="Type your message..." />
-        <button id="sendButton">Send</button>
-    </div>
+    <style>
+      body {
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: cadetblue;
+      }
+      #roleBox {
+        font-size: 40px;
+        font-family: Georgia; /* Change font-family here */
+       
+      }
+      #messageInput {
+        min-width: 290px;
+        min-height: 50px;
+      }
+      #messages {
+        border: 1px solid black;
+        min-height: 300px;
+        min-width: 350px;
+        background-color: rgb(255, 255, 255);
+        font-size: 16px;
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="roleBox">Waiting for player...</p>
     <div id="messages"></div>
+    <div id="input">
+      <input id="messageInput" type="text" placeholder="Type your message..." />
+      <button id="sendButton">Send</button>
+    </div>
 
     <!-- Include the Socket.io library -->
     <script src="/socket.io/socket.io.js"></script>
 
     <!-- Embed your game logic directly here -->
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

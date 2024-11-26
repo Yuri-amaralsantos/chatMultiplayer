@@ -7,7 +7,7 @@ const roleBox = document.getElementById('roleBox');
 
 // Display the assigned role
 socket.on('assignRole', (role) => {
-    roleBox.textContent = `${role}`;
+    roleBox.innerHTML = `${role}`;
 });
 
 // Update player slots when the server sends an update
