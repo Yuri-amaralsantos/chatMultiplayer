@@ -9,4 +9,5 @@ Para segurança adicional pode baixar o ngrok, digitar "ngrok http 3000" sem asp
 
 
 
-![Uploading gif app chat.gif…]()
+![gif app chat](https://github.com/user-attachments/assets/b3bdb36d-3be1-4972-8aad-1cab38f280b9)
+
